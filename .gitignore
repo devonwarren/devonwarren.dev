@@ -1,0 +1,6 @@
+env/ 
+*.pyc
+.vscode/*
+portfolio/local_settings/*
+static/
+*.sqlite3
