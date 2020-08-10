@@ -10,5 +10,5 @@ class PostAdmin(admin.ModelAdmin):
     
     class Media:
         css = {
-        'all': (STATIC_URL + 'css/monokai.css',)
+        'all': ('http://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css',)
         }

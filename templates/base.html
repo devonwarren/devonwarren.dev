@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% load static %}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+    <section class="sidebar">
+
+    </section>
+
+    <h1>Head 1</h1>
+    <h2>Head 2</h2>
+    <h3>Head 3</h3>
+
+    <ul>
+    <li><a href="https://google.com">Test link</a></li>
+    <li>List item</li>
+    </ul>
+
+    <table>
+    <thead>
+        <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>Devon</td>
+        <td>Warren</td>
+        <td>DevOps Engineer</td>
+        </tr>
+        <tr>
+        <td>John</td>
+        <td>Smith</td>
+        <td>Something</td>
+        </tr>
+    </tbody>
+    </table>
+
+
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

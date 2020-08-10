@@ -14,8 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.conf.urls import include
+from django.urls import path, include
+from blog import views
+
+# static files
+#from django.contrib.staticfiles import static
+from django.conf.urls.static import static
+from portfolio import settings
+#from django.conf.urls import include
 
 
 # contrib imports
@@ -26,7 +32,11 @@ def get_index():
     return None
 
 urlpatterns = [
+    # builtin modules
     path('admin/', admin.site.urls),
     path('martor/', include('martor.urls')),
+    # custom views
+    distill_path('', views.PostList.as_view(), name='home', distill_func=get_index, distill_file='index.html'),
+    path('post/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
