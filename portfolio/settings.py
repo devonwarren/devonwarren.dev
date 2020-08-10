@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_distill',
     'martor',
     'autoslug',
+    'taggit',
     # custom modules
     'blog',
 ]
