@@ -21,6 +21,8 @@ from blog import views
 #from django.contrib.staticfiles import static
 from django.conf.urls.static import static
 from portfolio import settings
+from blog.feeds import LatestPostsFeed
+from blog.models import Post
 #from django.conf.urls import include
 
 
@@ -31,12 +33,17 @@ from django_distill import distill_path
 def get_index():
     return None
 
+def get_blog_posts():
+    for post in Post.objects.all():
+        yield {'slug': post.slug}
+
+
 urlpatterns = [
     # builtin modules
     path('admin/', admin.site.urls),
     path('martor/', include('martor.urls')),
     # custom views
     distill_path('', views.PostList.as_view(), name='home', distill_func=get_index, distill_file='index.html'),
-    path('post/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
-
+    distill_path('post/<slug:slug>/', views.PostDetail.as_view(), name='post_detail', distill_func=get_blog_posts),
+    distill_path('feed/rss', LatestPostsFeed(), name='post_feed', distill_func=get_index),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

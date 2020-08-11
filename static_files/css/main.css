@@ -2,6 +2,8 @@ body {
     background-color: #eeeeee;
     color: #222831;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,4 +33,27 @@ th, td {
 thead, tr:nth-child(2) {
     background-color: #ddd;
     text-align: left;
+}
+section.sidebar {
+    background-color: #222831;
+    padding: 2rem;
+    text-align: center;
+}
+
+section.sidebar h1 {
+    margin: .4rem 0;
+}
+
+section.sidebar em {
+    margin: .2rem;
+    color: #BBB;
+}
+
+content {
+    padding: 2rem;
+}
+
+hr {
+    margin: 1.4rem 0;
+    border: 1px solid #222831;
 }
